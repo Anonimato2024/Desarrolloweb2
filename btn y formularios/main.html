@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formularios Diferentes</title>
+<link rel="stylesheet" type="text/css" href="main.css">
+<style>
+  .content {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<p>
+  <button onclick="showForm('content_first')">First</button>
+  <button onclick="showForm('content_second')">Second</button>
+  <button onclick="showForm('content_third')">Third</button>
+</p>
+
+<div class="content" id="content_first">
+    <form>
+      <label for="student_name">Nombre:</label>
+      <input type="text" id="student_name" name="student_name" required>
+      <label for="student_id">Curso:</label>
+      <input type="text" id="student_id" name="student_id" required>
+      <button type="submit">Registrar Estudiandte</button>
+    </form>
+  </div>
+  
+  <div class="content" id="content_second">
+    <form>
+      <label for="subject_name">Materia:</label>
+      <input type="text" id="subject_name" name="subject_name" required>
+      <label for="subject_code">Turno:</label>
+      <input type="text" id="subject_code" name="subject_code" required>
+      <button type="submit">Registrar Materia</button>
+    </form>
+  </div>
+  
+  <div class="content" id="content_third">
+    <form>
+      <label for="student_id">Nombre:</label>
+      <input type="text" id="student_id" name="student_id" required>
+      <label for="subject_code">Notas:</label>
+      <input type="text" id="subject_code" name="subject_code" required>
+      <button type="submit">Verificar</button>
+    </form>
+  </div>
+  
+
+<script>
+  function showForm(formId) {
+    var forms = document.getElementsByClassName('content');
+    for (var i = 0; i < forms.length; i++) {
+      forms[i].style.display = 'none';
+    }
+    document.getElementById(formId).style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
